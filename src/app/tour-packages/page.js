@@ -1,9 +1,7 @@
-import AppLayout from '@/layouts/AppLayout'
+import TourPackacgeList from '@/components/shared/tour-packages/TourPackacgeList'
 
 const TourPackages = () => {
-    return (
-        <AppLayout></AppLayout>
-    )
+    return <TourPackacgeList />
 }
 
 export default TourPackages

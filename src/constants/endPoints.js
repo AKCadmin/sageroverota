@@ -14,6 +14,12 @@ const ENDPOINTS = {
   PROPERTY: {
     SEARCH_BY_DESTINATION: '/property-list'
   },
+
+
+  // ========== TOUR PACKAGES routes ==============
+  TOUR_PACKAGE: {
+    GET_PACKAGES: '/tour-packages'
+  },
 }
 
 export default ENDPOINTS;
