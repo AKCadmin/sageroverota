@@ -49,7 +49,7 @@ const DestinationDetails = ({ id }) => {
   // filtering destionation list - removing this selected destination
   useEffect(() => {
     if (otherDestinations) {
-      setAllDestinations(otherDestinations.filter((dest) => Number(dest.id) !== Number(id)));
+      // setAllDestinations(otherDestinations.filter((dest) => Number(dest.id) !== Number(id)));
     }
   }, [otherDestinations, id])
 

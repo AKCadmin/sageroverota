@@ -16,6 +16,7 @@ const DestinationSearchForms = () => {
 
     // Fetch destination data using custom hook
     const { data, isLoading, isError } = useFetchDestinations();
+
     // usePropertySearchByDestination hook mutation
     const { mutate } = usePropertySearchByDestination();
 
@@ -42,8 +43,9 @@ const DestinationSearchForms = () => {
     // Update dropdown options once data is fetched
     useEffect(() => {
         if (data) {
+            console.log("data: ", data);
             const dropdownData = data
-                .filter(dest => dest.status === true) // Filter only active destinations
+                // .filter(dest => dest.status === true) // Filter only active destinations
                 .map(dest => ({
                     value: dest.id,
                     label: dest.destination_name

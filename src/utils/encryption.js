@@ -1,5 +1,4 @@
 import CryptoJS from "crypto-js";
-
 const SECRET_KEY = process.env.NEXT_PUBLIC_SECRET_KEY || "fallback_key_for_dev";
 
 export function encrypt(text) {
@@ -11,6 +10,7 @@ export function encrypt(text) {
     console.error("Encryption failed:", e);
     return "";
   }
+  // return text;
 }
 
 
@@ -25,5 +25,6 @@ export function decrypt(cipherText) {
     console.error("Decryption failed:", e);
     return "";
   }
+  // return cipherText;
 }
 

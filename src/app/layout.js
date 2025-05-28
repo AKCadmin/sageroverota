@@ -2,6 +2,8 @@ import AppLayout from "@/layouts/AppLayout";
 import Providers from "@/services/Provider";
 import Script from "next/script";
 import "./globals.css";
+import "./index.css";
+import "./style.css";
 
 export const metadata = {
   title: "Sage Rover",

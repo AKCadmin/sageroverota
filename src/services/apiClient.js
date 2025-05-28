@@ -14,7 +14,8 @@ export const get = async (url, params = {}, config = {}) => {
       params,
       ...config,
     });
-    return response.data;
+    console.log("response data: ", response.data);
+    return response.data?.data;
   } catch (error) {
     toast.error(error.message);
   }

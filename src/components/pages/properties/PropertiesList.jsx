@@ -1,4 +1,7 @@
 import PageTitle from "@/components/shared/PageTitle"
+import { encrypt } from "@/utils/encryption"
+import Image from "next/image"
+import slugify from "slugify"
 
 const PropertiesList = ({ properties = [] }) => {
   return (
@@ -94,21 +97,23 @@ const PropertiesList = ({ properties = [] }) => {
                 {properties.length > 0
                   ? (
                     properties.map((property, index) => (
-                      <div className="col-12">
+                      <div className="col-12 mb-4">
                         <div className="card shadow">
                           <div className="row g-0">
                             <div className="col-md-4">
-                              <a href="#">
-                                <img
+                              <a href={`/property-list/${encrypt(property?.property_id)}/${slugify(property?.property_name)}`}>
+                                <Image
                                   src={property?.primary_property_image || "https://media.istockphoto.com/id/1255835530/photo/modern-custom-suburban-home-exterior.jpg"}
-                                  alt="Property"
-                                  className="img-fluid rounded-start"
+                                  alt="Property image"
+                                  width={500}
+                                  height={500}
+                                  style={{ objectPosition: 'center', objectFit: 'cover', height: '100%', width: '100%' }}
                                 />
                               </a>
                             </div>
                             <div className="col-md-5">
                               <div className="card-body">
-                                <a href="#" className="text-decoration-none">
+                                <a href={`/property-list/${encrypt(property?.property_id)}/${slugify(property?.property_name)}`} className="text-decoration-none">
                                   <h5 className="card-title">{property?.property_name} <span className="text-warning">★★★★★</span></h5>
                                 </a>
                                 <p className="mb-1">{property?.property_address}</p>
@@ -144,7 +149,7 @@ const PropertiesList = ({ properties = [] }) => {
                               <h4 className="text-primary">₹0</h4>
                               <p className="mb-1">({property?.reviews[0]?.total_reviews} Reviews)</p>
                               {/* <p className="text-muted small mb-2">+ ₹0 taxes & fees<br />Per Night</p> */}
-                              <a href="#" className="btn btn-primary btn-sm">Book Now</a>
+                              <a href={`/property-list/${encrypt(property?.property_id)}/${slugify(property?.property_name)}`} className="btn btn-primary btn-sm">Book Now</a>
                             </div>
                           </div>
                         </div>
